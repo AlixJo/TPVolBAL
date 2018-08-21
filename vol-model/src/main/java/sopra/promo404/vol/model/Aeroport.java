@@ -28,6 +28,14 @@ public class Aeroport {
 	public Aeroport() {
 	}
 
+
+	public Aeroport(String code) {
+		super();
+		this.code = code;
+	}
+
+
+
 	public Long getId() {
 		return id;
 	}

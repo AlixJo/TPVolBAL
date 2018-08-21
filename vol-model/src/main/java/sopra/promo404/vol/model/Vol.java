@@ -43,6 +43,14 @@ public class Vol {
 
 	public Vol() {
 	}
+	
+	public Vol(Date dtDepart, Date dtArrivee, Integer nbPlace, Boolean ouvert) {
+		super();
+		this.dtDepart = dtDepart;
+		this.dtArrivee = dtArrivee;
+		this.nbPlace = nbPlace;
+		this.ouvert = ouvert;
+	}
 
 	public Long getId() {
 		return id;
