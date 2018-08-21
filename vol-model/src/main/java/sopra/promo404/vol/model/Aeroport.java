@@ -1,13 +1,25 @@
 package sopra.promo404.vol.model;
 
 import java.util.ArrayList;
-import java.util.List;
 
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name ="AEROPORT")
 public class Aeroport {
 
+	@Id
+	@GeneratedValue
 	private Long id;
 	private String code;
-	private List<Ville> villes = new ArrayList<>();
+	@ManyToOne
+	@JoinColumn(name= "Aeroport_ville_id")
+	private ArrayList<AeroVille> ville = new ArrayList<>();
 
 	public Aeroport() {
 	}
@@ -28,12 +40,12 @@ public class Aeroport {
 		this.code = code;
 	}
 
-	public List<Ville> getVilles() {
-		return villes;
+	public ArrayList<AeroVille> getVille() {
+		return ville;
 	}
 
-	public void setVilles(List<Ville> villes) {
-		this.villes = villes;
+	public void setVille(ArrayList<AeroVille> ville) {
+		this.ville = ville;
 	}
 
 }
