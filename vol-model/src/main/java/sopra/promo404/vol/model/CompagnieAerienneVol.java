@@ -1,9 +1,23 @@
 package sopra.promo404.vol.model;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.Table;
+
+@Entity
+@Table(name="CompagnieAerienneVol")
 public class CompagnieAerienneVol {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name="CompagnieAerienneVol_id")
 	private Long id;
 	private String numero;
+	@OneToMany
 	private CompagnieAerienne compagnieAerienne;
 	private Vol vol;
 

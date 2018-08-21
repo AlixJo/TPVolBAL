@@ -2,15 +2,37 @@ package sopra.promo404.vol.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Version;
+@Entity
+@Table (name = "Reservation")
 public class Reservation {
-
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name = "Reservation Id")
 	private Long id;
+	@Version
+	private int version;
 	private String code;
 	private Date dtResa;
 	private Boolean confirmee;
 	private Boolean annulee;
+	@OneToOne
+	@JoinColumn(name= "Passager_id")
 	private Passager passager;
+	@ManyToOne
+	@JoinColumn(name="Vol_id")
 	private Vol vol;
+	@ManyToOne
+	@JoinColumn(name="Client_id")
 	private Client client;
 
 	public Reservation() {
@@ -78,6 +100,14 @@ public class Reservation {
 
 	public void setClient(Client client) {
 		this.client = client;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 }

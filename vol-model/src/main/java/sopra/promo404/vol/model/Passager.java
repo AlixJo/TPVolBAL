@@ -4,14 +4,29 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+@Entity
+@Table(name= "Passager")
 public class Passager {
 
+	@Id
+	@GeneratedValue(strategy=GenerationType.IDENTITY)
+	@Column(name= "Passager_id")
 	private Long id;
 	private String nom;
 	private String prenom;
 	private Date dtNaissance;
 	private String pieceIdentite;
+	@Embedded
 	private Adresse adresse;
+	@OneToOne(mappedBy="Passager_id")
 	private List<Reservation> reservations = new ArrayList<>();
 
 	public Passager() {
