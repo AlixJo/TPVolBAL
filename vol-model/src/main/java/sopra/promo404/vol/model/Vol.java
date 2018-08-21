@@ -4,8 +4,21 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Table;
+
+@Entity
+@Table(name = "vol")
 public class Vol {
 
+	@Id
+	@GeneratedValue
+	@Column(name = "vol_id")
 	private Long id;
 	private Date dtDepart;
 	private Date dtArrivee;
@@ -15,6 +28,8 @@ public class Vol {
 	private List<Reservation> reservations = new ArrayList<>();
 	private Aeroport depart;
 	private Aeroport arrivee;
+	@ManyToOne
+	@JoinColumn(name="compagniearienne_id")
 	private List<CompagnieAerienneVol> compagnieAeriennes = new ArrayList<>();
 
 	public Vol() {
