@@ -4,7 +4,10 @@ import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
+import javax.persistence.Version;
 
 @Entity
 public class AeroVille {
@@ -13,9 +16,13 @@ public class AeroVille {
 	@GeneratedValue
 	@Column(name = "aeroville_id")
 	private long id;
-	@OneToMany(mappedBy = "ville")
+	@Version
+	private int version;
+	@ManyToOne
+	@JoinColumn(name = "aeroville_aeroport_id")
 	private Aeroport aeroport;
-	@OneToMany(mappedBy = "aeroports")
+	@ManyToOne
+	@JoinColumn(name = "aeroville_ville_id")
 	private Ville ville;
 
 	public AeroVille() {
@@ -51,6 +58,14 @@ public class AeroVille {
 
 	public void setVille(Ville ville) {
 		this.ville = ville;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 }

@@ -10,7 +10,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 @Entity
 @Table(name = "vol")
@@ -20,16 +22,23 @@ public class Vol {
 	@GeneratedValue
 	@Column(name = "vol_id")
 	private Long id;
+	@Version
+	private int version;
 	private Date dtDepart;
 	private Date dtArrivee;
 	private Integer nbPlace;
 	private Boolean ouvert;
+	@OneToMany(mappedBy="vol")
 	private List<Escale> escales = new ArrayList<>();
+	@OneToMany(mappedBy="vol")
 	private List<Reservation> reservations = new ArrayList<>();
-	private Aeroport depart;
-	private Aeroport arrivee;
 	@ManyToOne
-	@JoinColumn(name="compagniearienne_id")
+	@JoinColumn(name="aeroportdt_id")
+	private Aeroport depart;
+	@ManyToOne
+	@JoinColumn(name="aeroportar_id")
+	private Aeroport arrivee;
+	@OneToMany(mappedBy="vol")
 	private List<CompagnieAerienneVol> compagnieAeriennes = new ArrayList<>();
 
 	public Vol() {
@@ -113,6 +122,14 @@ public class Vol {
 
 	public void setReservations(List<Reservation> reservations) {
 		this.reservations = reservations;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 }

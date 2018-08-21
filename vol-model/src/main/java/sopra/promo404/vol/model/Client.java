@@ -31,11 +31,11 @@ public abstract class Client {
 	private String numeroTel;
 	private String numeroFax;
 	private String email;
-	@OneToOne(mappedBy ="login")
+	@OneToOne(mappedBy ="client")
 	private Login login;
 	@Embedded
 	private Adresse adresse;
-	@OneToMany(mappedBy="reservation_id")
+	@OneToMany(mappedBy="client")
 	private List<Reservation> reservations = new ArrayList<>();
 
 	public Client() {

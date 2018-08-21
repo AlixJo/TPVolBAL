@@ -11,10 +11,10 @@ import javax.persistence.Version;
 @Entity
 @Table(name = "login")
 public class Login {
+	
 	@Id
 	@GeneratedValue
 	private Long id;
-
 	@Version
 	private int version;
 

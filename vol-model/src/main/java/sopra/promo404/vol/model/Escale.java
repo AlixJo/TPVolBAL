@@ -2,12 +2,30 @@ package sopra.promo404.vol.model;
 
 import java.util.Date;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
+import javax.persistence.Version;
+
+@Entity
 public class Escale {
 
+	@Id
+	@GeneratedValue
+	@Column(name = "escale_id")
 	private Long id;
+	@Version
+	private int version;
 	private Date hDepart;
 	private Date hArrivee;
+	@ManyToOne
+	@JoinColumn(name = "escale_aeroport_id")
 	private Aeroport aeroport;
+	@ManyToOne
+	@JoinColumn(name = "escale_vol_id")
 	private Vol vol;
 
 	public Escale() {
@@ -44,6 +62,14 @@ public class Escale {
 		this.hArrivee = hArrivee;
 	}
 
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+
 	public Aeroport getAeroport() {
 		return aeroport;
 	}
@@ -59,5 +85,6 @@ public class Escale {
 	public void setVol(Vol vol) {
 		this.vol = vol;
 	}
+	
 
 }

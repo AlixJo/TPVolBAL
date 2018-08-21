@@ -6,8 +6,9 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
-import javax.persistence.OneToMany;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Version;
 
 @Entity
 @Table(name="compagnieaeriennevol")
@@ -17,11 +18,14 @@ public class CompagnieAerienneVol {
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
 	@Column(name="compagnieaeriennevol_id")
 	private Long id;
+	@Version
+	private int version;
 	private String numero;
-	@OneToMany(mappedBy="vols")
+	@ManyToOne
+	@JoinColumn(name="compaervol_compagnieaerienne_id")
 	private CompagnieAerienne compagnieAerienne;
-	
-	@OneToMany(mappedBy="compagnieAeriennes")
+	@ManyToOne
+	@JoinColumn(name="compaervol_vol_id")
 	private Vol vol;
 
 	public CompagnieAerienneVol() {
@@ -64,6 +68,14 @@ public class CompagnieAerienneVol {
 
 	public void setNumero(String numero) {
 		this.numero = numero;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 }
