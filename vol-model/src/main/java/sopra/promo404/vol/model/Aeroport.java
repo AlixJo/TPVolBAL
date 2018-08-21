@@ -2,6 +2,7 @@ package sopra.promo404.vol.model;
 
 import java.util.ArrayList;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,15 +11,16 @@ import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name ="AEROPORT")
+@Table(name = "AEROPORT")
 public class Aeroport {
 
 	@Id
 	@GeneratedValue
+	@Column(name = "aeroport_id")
 	private Long id;
 	private String code;
 	@ManyToOne
-	@JoinColumn(name= "Aeroport_ville_id")
+	@JoinColumn(name = "Aeroport_ville_id")
 	private ArrayList<AeroVille> ville = new ArrayList<>();
 
 	public Aeroport() {

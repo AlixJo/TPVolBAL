@@ -1,5 +1,6 @@
 package sopra.promo404.vol.model;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
@@ -10,8 +11,9 @@ public class AeroVille {
 
 	@Id
 	@GeneratedValue
+	@Column(name = "aeroville_id")
 	private long id;
-	@OneToMany(mappedBy ="ville")
+	@OneToMany(mappedBy = "ville")
 	private Aeroport aeroport;
 	@OneToMany(mappedBy = "aeroports")
 	private Ville ville;
