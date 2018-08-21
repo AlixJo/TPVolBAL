@@ -1,5 +1,7 @@
 package tpVolBAL.dao;
 
-public interface IdaoReservation {
+import sopra.promo404.vol.model.Reservation;
+
+public interface IdaoReservation extends IDao<Reservation, Long> {
 
 }
