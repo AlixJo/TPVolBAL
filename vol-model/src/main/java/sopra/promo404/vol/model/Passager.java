@@ -29,8 +29,8 @@ public class Passager {
 	private String pieceIdentite;
 	@Embedded
 	private Adresse adresse;
-	@OneToOne(mappedBy="passager_id")
-	private List<Reservation> reservations = new ArrayList<>();
+	@OneToOne(mappedBy="passager")
+	private Reservation reservation;
 
 	public Passager() {
 	}
@@ -83,12 +83,22 @@ public class Passager {
 		this.adresse = adresse;
 	}
 
-	public List<Reservation> getReservations() {
-		return reservations;
+	public int getVersion() {
+		return version;
 	}
 
-	public void setReservations(List<Reservation> reservations) {
-		this.reservations = reservations;
+	public void setVersion(int version) {
+		this.version = version;
 	}
+
+	public Reservation getReservation() {
+		return reservation;
+	}
+
+	public void setReservation(Reservation reservation) {
+		this.reservation = reservation;
+	}
+
+	
 
 }

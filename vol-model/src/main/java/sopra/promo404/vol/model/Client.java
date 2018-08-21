@@ -11,6 +11,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.InheritanceType;
+import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
@@ -34,6 +35,7 @@ public abstract class Client {
 	private Login login;
 	@Embedded
 	private Adresse adresse;
+	@OneToMany(mappedBy="reservation_id")
 	private List<Reservation> reservations = new ArrayList<>();
 
 	public Client() {

@@ -17,7 +17,7 @@ import javax.persistence.Version;
 public class Reservation {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "reservation Id")
+	@Column(name = "reservation_id")
 	private Long id;
 	@Version
 	private int version;
