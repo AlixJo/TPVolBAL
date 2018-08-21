@@ -2,15 +2,37 @@ package sopra.promo404.vol.model;
 
 import java.util.ArrayList;
 import java.util.List;
+import javax.persistence.Column;
+import javax.persistence.DiscriminatorColumn;
+import javax.persistence.Embedded;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
+import javax.persistence.OneToOne;
+import javax.persistence.Table;
+import javax.persistence.Version;
 
+@Entity
+@Table(name="Client")
+@Inheritance(strategy=InheritanceType.SINGLE_TABLE)
+@DiscriminatorColumn(name="type de client")
 public abstract class Client {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	@Column(name="client_id")
 	private Long id;
+	@Version
+	private int version;
 	private String nom;
 	private String numeroTel;
 	private String numeroFax;
 	private String email;
+	@OneToOne(mappedBy ="login")
 	private Login login;
+	@Embedded
 	private Adresse adresse;
 	private List<Reservation> reservations = new ArrayList<>();
 
@@ -84,4 +106,14 @@ public abstract class Client {
 	public void setReservations(List<Reservation> reservations) {
 		this.reservations = reservations;
 	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
+	}
+	
+	
 }

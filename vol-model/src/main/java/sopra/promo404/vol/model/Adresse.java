@@ -1,6 +1,12 @@
 package sopra.promo404.vol.model;
 
-public class Adresse {
+import java.io.Serializable;
+
+import javax.persistence.Embeddable;
+
+@SuppressWarnings("serial")
+@Embeddable
+public class Adresse implements Serializable{
 
 	private String rue;
 	private String codePostal;

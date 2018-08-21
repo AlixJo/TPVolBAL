@@ -1,7 +1,18 @@
 package sopra.promo404.vol.model;
 
-public class Particulier extends Client {
+import javax.persistence.DiscriminatorValue;
+import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.Version;
 
+@Entity
+@DiscriminatorValue("particulier")
+public class Particulier extends Client {
+	
+	@Version
+	private int version;
+	@Enumerated(EnumType.STRING)
 	private Civilite civilite;
 	private String prenom;
 
@@ -23,6 +34,14 @@ public class Particulier extends Client {
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
+	}
+
+	public int getVersion() {
+		return version;
+	}
+
+	public void setVersion(int version) {
+		this.version = version;
 	}
 
 }
