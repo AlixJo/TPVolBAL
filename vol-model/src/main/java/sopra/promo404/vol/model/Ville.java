@@ -30,6 +30,16 @@ public class Ville {
 
 	public Ville() {
 	}
+	
+	
+
+	public Ville(String nom, String codePostal) {
+		super();
+		this.nom = nom;
+		this.codePostal = codePostal;
+	}
+
+
 
 	public Long getId() {
 		return id;

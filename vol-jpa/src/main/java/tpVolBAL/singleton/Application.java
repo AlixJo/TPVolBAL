@@ -2,13 +2,17 @@ package tpVolBAL.singleton;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 
+import tpVolBAL.dao.IDaoAeroVille;
 import tpVolBAL.dao.IDaoAeroport;
+import tpVolBAL.dao.IDaoEscale;
 import tpVolBAL.dao.IDaoVille;
 import tpVolBAL.dao.IDaoVol;
 import tpVolBAL.dao.IdaoClient;
 import tpVolBAL.dao.IdaoLogin;
+import tpVolBAL.daoJPA.DaoAeroVille;
 import tpVolBAL.daoJPA.DaoAeroport;
 import tpVolBAL.daoJPA.DaoClient;
+import tpVolBAL.daoJPA.DaoEscale;
 import tpVolBAL.daoJPA.DaoLogin;
 import tpVolBAL.daoJPA.DaoVille;
 import tpVolBAL.daoJPA.DaoVol;
@@ -23,6 +27,8 @@ public class Application {
 		private final IDaoVol daoVol = new DaoVol();
 		private final IdaoLogin daoLogin = new DaoLogin();
 		private final IdaoClient daoClient = new DaoClient();
+		private final IDaoAeroVille daoAeroVille = new DaoAeroVille();
+		private final IDaoEscale daoEscale = new DaoEscale();
 
 		private Application() {
 
@@ -58,6 +64,14 @@ public class Application {
 
 		public IdaoClient getDaoClient() {
 			return daoClient;
+		}
+
+		public IDaoAeroVille getDaoAeroVille() {
+			return daoAeroVille;
+		}
+
+		public IDaoEscale getDaoEscale() {
+			return daoEscale;
 		}
 		
 		
