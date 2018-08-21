@@ -7,16 +7,16 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
-import sopra.promo404.vol.model.Ville;
-import tpVolBAL.dao.IDaoVille;
+import sopra.promo404.vol.model.Escale;
+import tpVolBAL.dao.IDaoEscale;
 import tpVolBAL.singleton.Application;
 
-public class DaoVille implements IDaoVille {
+public class DaoEscale implements IDaoEscale {
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Ville> findAll() {
-		List<Ville> liste = new ArrayList<>();
+	public List<Escale> findAll() {
+		List<Escale> liste = new ArrayList<>();
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -26,8 +26,8 @@ public class DaoVille implements IDaoVille {
 			tx = em.getTransaction();
 			tx.begin();
 
-			Query query = em.createQuery("from Ville", Ville.class);
-			liste = (List<Ville>) query.getResultList();
+			Query query = em.createQuery("from Escale", Escale.class);
+			liste = (List<Escale>) query.getResultList();
 
 			tx.commit();
 		} catch (Exception e) {
@@ -45,8 +45,8 @@ public class DaoVille implements IDaoVille {
 	}
 
 	@Override
-	public Ville findById(Long id) {
-		Ville entity = null;
+	public Escale findById(Long id) {
+		Escale entity = null;
 
 		EntityManager em = null;
 		EntityTransaction tx = null;
@@ -56,7 +56,7 @@ public class DaoVille implements IDaoVille {
 			tx = em.getTransaction();
 			tx.begin();
 
-			entity = em.find(Ville.class, id);
+			entity = em.find(Escale.class, id);
 
 			tx.commit();
 		} catch (Exception e) {
@@ -74,7 +74,7 @@ public class DaoVille implements IDaoVille {
 	}
 
 	@Override
-	public Ville save(Ville entity) {
+	public Escale save(Escale entity) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -105,8 +105,7 @@ public class DaoVille implements IDaoVille {
 	}
 
 	@Override
-	public void delete(Ville entity) {
-
+	public void delete(Escale entity) {
 		EntityManager em = null;
 		EntityTransaction tx = null;
 
@@ -140,7 +139,7 @@ public class DaoVille implements IDaoVille {
 			tx = em.getTransaction();
 			tx.begin();
 
-			em.remove(em.find(Ville.class, id));
+			em.remove(em.find(Escale.class, id));
 
 			tx.commit();
 		} catch (Exception e) {
@@ -153,6 +152,7 @@ public class DaoVille implements IDaoVille {
 				em.close();
 			}
 		}
+
 	}
 
 }
