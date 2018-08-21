@@ -60,6 +60,11 @@ public class CompagnieAerienne {
 	public void setVersion(int version) {
 		this.version = version;
 	}
+
+	public CompagnieAerienne(String nom) {
+		super();
+		this.nom = nom;
+	}
 	
 
 }

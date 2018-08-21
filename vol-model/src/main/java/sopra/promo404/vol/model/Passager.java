@@ -99,6 +99,23 @@ public class Passager {
 		this.reservation = reservation;
 	}
 
+	public Passager(String nom, String prenom, Date dtNaissance, String pieceIdentite) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dtNaissance = dtNaissance;
+		this.pieceIdentite = pieceIdentite;
+	}
+
+	public Passager(String nom, String prenom, Date dtNaissance, String pieceIdentite, Adresse adresse) {
+		super();
+		this.nom = nom;
+		this.prenom = prenom;
+		this.dtNaissance = dtNaissance;
+		this.pieceIdentite = pieceIdentite;
+		this.adresse = adresse;
+	}
+
 	
 
 }

@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.persistence.Version;
 @Entity
 @Table (name = "reservation")
@@ -22,6 +24,7 @@ public class Reservation {
 	@Version
 	private int version;
 	private String code;
+	@Temporal(TemporalType.DATE)
 	private Date dtResa;
 	private Boolean confirmee;
 	private Boolean annulee;
@@ -110,4 +113,39 @@ public class Reservation {
 		this.version = version;
 	}
 
+	public Reservation(Long id, int version, String code, Date dtResa, Boolean confirmee, Boolean annulee,
+			Passager passager, Vol vol, Client client) {
+		super();
+		this.id = id;
+		this.version = version;
+		this.code = code;
+		this.dtResa = dtResa;
+		this.confirmee = confirmee;
+		this.annulee = annulee;
+		this.passager = passager;
+		this.vol = vol;
+		this.client = client;
+	}
+
+	public Reservation(String code, Date dtResa, Boolean confirmee, Boolean annulee) {
+		super();
+		this.code = code;
+		this.dtResa = dtResa;
+		this.confirmee = confirmee;
+		this.annulee = annulee;
+	}
+
+	public Reservation(String code, Date dtResa, Boolean confirmee, Boolean annulee, Passager passager, Vol vol,
+			Client client) {
+		super();
+		this.code = code;
+		this.dtResa = dtResa;
+		this.confirmee = confirmee;
+		this.annulee = annulee;
+		this.passager = passager;
+		this.vol = vol;
+		this.client = client;
+	}
+
+	
 }
