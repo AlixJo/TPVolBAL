@@ -9,22 +9,17 @@ import javax.persistence.Version;
 @Entity
 @DiscriminatorValue("particulier")
 public class Particulier extends Client {
-	
-	@Version
-	private int version;
+
 	@Enumerated(EnumType.STRING)
 	private Civilite civilite;
 	private String prenom;
 
-	public Particulier() {
-		super();
-	}
+	public Particulier(String nom, String numeroTel, String numeroFax, String email, String prenom, Civilite civilite) {
+		super(nom, numeroTel, numeroFax, email);
 
-	public Particulier(int version, Civilite civilite, String prenom) {
-		super();
-		this.version = version;
-		this.civilite = civilite;
 		this.prenom = prenom;
+		this.civilite = civilite;
+
 	}
 
 	public Civilite getCivilite() {
@@ -41,14 +36,6 @@ public class Particulier extends Client {
 
 	public void setPrenom(String prenom) {
 		this.prenom = prenom;
-	}
-
-	public int getVersion() {
-		return version;
-	}
-
-	public void setVersion(int version) {
-		this.version = version;
 	}
 
 }

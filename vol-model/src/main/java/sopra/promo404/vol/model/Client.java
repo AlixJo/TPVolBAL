@@ -41,14 +41,12 @@ public abstract class Client {
 	public Client() {
 	}
 
-	public Client(int version, String nom, String numeroTel, String numeroFax, String email, Login login) {
+	public Client(String nom, String numeroTel, String numeroFax, String email) {
 		super();
-		this.version = version;
 		this.nom = nom;
 		this.numeroTel = numeroTel;
 		this.numeroFax = numeroFax;
 		this.email = email;
-		this.login = login;
 	}
 
 	public Client(String nom) {

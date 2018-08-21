@@ -16,13 +16,13 @@ public class TestDaoClient {
 		
 		IdaoClient daoClient = new DaoClient();
 		
-		Particulier C1 = new Particulier(1, Civilite.MR, "Jean");
+		Particulier C1 = new Particulier("Jaquet", "0553784678", "0845231989", "albancastagne@hotmail.fr", "Jean", Civilite.MR);
 	
 		daoClient.save(C1); 
 
-		Client C2 = daoClient.findById(10L);
-
-		daoClient.delete(C2);
+//		Client C2 = daoClient.findById(2L);
+//
+//		daoClient.delete(C2);
 	}
 
 }
