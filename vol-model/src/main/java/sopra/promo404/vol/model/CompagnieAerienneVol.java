@@ -18,11 +18,10 @@ public class CompagnieAerienneVol {
 	@Column(name="compagnieaeriennevol_id")
 	private Long id;
 	private String numero;
-	@OneToMany
-	@JoinColumn(name="vompagnieaerienne_id")
+	@OneToMany(mappedBy="vols")
 	private CompagnieAerienne compagnieAerienne;
-	@OneToMany
-	@JoinColumn(name="vol_id")
+	
+	@OneToMany(mappedBy="compagnieAeriennes")
 	private Vol vol;
 
 	public CompagnieAerienneVol() {
