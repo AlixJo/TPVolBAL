@@ -22,6 +22,10 @@ public class Particulier extends Client {
 
 	}
 
+	public Particulier() {
+		super();
+	}
+
 	public Civilite getCivilite() {
 		return civilite;
 	}

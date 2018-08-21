@@ -28,6 +28,13 @@ public class Login {
 	public Login() {
 	}
 
+	public Login(String identifiant, String motDePasse, Boolean admin) {
+		super();
+		this.identifiant = identifiant;
+		this.motDePasse = motDePasse;
+		this.admin = admin;
+	}
+
 	public Long getId() {
 		return id;
 	}

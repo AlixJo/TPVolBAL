@@ -14,6 +14,14 @@ public class Societe extends Client {
 	private FormeJuridique formeJuridique;
 	private String siret;
 
+	
+	public Societe(String nom, String numeroTel, String numeroFax, String email, String siret, FormeJuridique formeJuridique) {
+		super(nom, numeroTel, numeroFax, email);
+		
+		this.siret = siret;
+		this.formeJuridique = formeJuridique;
+
+	}
 	public Societe() {
 	}
 
