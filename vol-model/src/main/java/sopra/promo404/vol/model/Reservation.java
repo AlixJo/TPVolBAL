@@ -13,11 +13,11 @@ import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
 @Entity
-@Table (name = "Reservation")
+@Table (name = "reservation")
 public class Reservation {
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name = "Reservation Id")
+	@Column(name = "reservation Id")
 	private Long id;
 	@Version
 	private int version;
@@ -26,13 +26,13 @@ public class Reservation {
 	private Boolean confirmee;
 	private Boolean annulee;
 	@OneToOne
-	@JoinColumn(name= "Passager_id")
+	@JoinColumn(name= "passager_id")
 	private Passager passager;
 	@ManyToOne
-	@JoinColumn(name="Vol_id")
+	@JoinColumn(name="vol_id")
 	private Vol vol;
 	@ManyToOne
-	@JoinColumn(name="Client_id")
+	@JoinColumn(name="client_id")
 	private Client client;
 
 	public Reservation() {

@@ -12,21 +12,24 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
+import javax.persistence.Version;
 @Entity
-@Table(name= "Passager")
+@Table(name= "passager")
 public class Passager {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name= "Passager_id")
+	@Column(name= "passager_id")
 	private Long id;
+	@Version
+	private int version;
 	private String nom;
 	private String prenom;
 	private Date dtNaissance;
 	private String pieceIdentite;
 	@Embedded
 	private Adresse adresse;
-	@OneToOne(mappedBy="Passager_id")
+	@OneToOne(mappedBy="passager_id")
 	private List<Reservation> reservations = new ArrayList<>();
 
 	public Passager() {

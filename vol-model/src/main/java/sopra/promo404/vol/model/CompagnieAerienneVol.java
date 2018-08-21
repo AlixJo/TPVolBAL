@@ -5,20 +5,24 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name="CompagnieAerienneVol")
+@Table(name="compagnieaeriennevol")
 public class CompagnieAerienneVol {
 
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	@Column(name="CompagnieAerienneVol_id")
+	@Column(name="compagnieaeriennevol_id")
 	private Long id;
 	private String numero;
 	@OneToMany
+	@JoinColumn(name="vompagnieaerienne_id")
 	private CompagnieAerienne compagnieAerienne;
+	@OneToMany
+	@JoinColumn(name="vol_id")
 	private Vol vol;
 
 	public CompagnieAerienneVol() {
