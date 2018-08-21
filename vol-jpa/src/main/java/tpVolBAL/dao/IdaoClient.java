@@ -1,5 +1,7 @@
 package tpVolBAL.dao;
 
-public interface IdaoClient {
+import sopra.promo404.vol.model.Client;
+
+public interface IdaoClient extends IDao<Client, Long>{
 
 }

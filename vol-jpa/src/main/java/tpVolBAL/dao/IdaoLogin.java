@@ -1,5 +1,7 @@
 package tpVolBAL.dao;
 
-public interface IdaoLogin {
+import sopra.promo404.vol.model.Login;
+
+public interface IdaoLogin extends IDao<Login, Long>{
 
 }

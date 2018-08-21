@@ -20,6 +20,13 @@ public class Particulier extends Client {
 		super();
 	}
 
+	public Particulier(int version, Civilite civilite, String prenom) {
+		super();
+		this.version = version;
+		this.civilite = civilite;
+		this.prenom = prenom;
+	}
+
 	public Civilite getCivilite() {
 		return civilite;
 	}

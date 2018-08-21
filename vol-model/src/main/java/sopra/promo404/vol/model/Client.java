@@ -19,7 +19,7 @@ import javax.persistence.Version;
 @Entity
 @Table(name="Client")
 @Inheritance(strategy=InheritanceType.SINGLE_TABLE)
-@DiscriminatorColumn(name="type de client")
+@DiscriminatorColumn(name="typedeclient")
 public abstract class Client {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -39,6 +39,16 @@ public abstract class Client {
 	private List<Reservation> reservations = new ArrayList<>();
 
 	public Client() {
+	}
+
+	public Client(int version, String nom, String numeroTel, String numeroFax, String email, Login login) {
+		super();
+		this.version = version;
+		this.nom = nom;
+		this.numeroTel = numeroTel;
+		this.numeroFax = numeroFax;
+		this.email = email;
+		this.login = login;
 	}
 
 	public Client(String nom) {
@@ -115,6 +125,12 @@ public abstract class Client {
 
 	public void setVersion(int version) {
 		this.version = version;
+	}
+
+	@Override
+	public String toString() {
+		return "Client [id=" + id + ", version=" + version + ", nom=" + nom + ", numeroTel=" + numeroTel
+				+ ", numeroFax=" + numeroFax + ", email=" + email + "]";
 	}
 	
 	
