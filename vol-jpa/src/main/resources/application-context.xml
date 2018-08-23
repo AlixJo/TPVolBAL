@@ -12,9 +12,6 @@
 	<context:property-placeholder
 		location="classpath:data-source.properties" />
 
-	<context:component-scan
-		base-package="tpVolBAL.repository" />
-
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="${sql.driver}" />
@@ -56,5 +53,5 @@
 
 	<bean
 		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
-	<jpa:repositories base-package="eshop.dao" />
+	<jpa:repositories base-package="tpVolBAL.repository" />
 </beans>
