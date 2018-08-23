@@ -2,13 +2,13 @@ package testdao;
 
 import sopra.promo404.vol.model.Client;
 import sopra.promo404.vol.model.Login;
-import tpVolBAL.dao.IdaoLogin;
 import tpVolBAL.daoJPA.DaoLogin;
+import tpVolBAL.repository.IRepoLogin;
 
 public class TestDaoLogin {
 
 	public static void main(String[] args) {
-		IdaoLogin daoLogin = new DaoLogin();
+		IRepoLogin daoLogin = new DaoLogin();
 
 		Login L1 = new Login("AL13", "motdepasse1", false);
 		daoLogin.save(L1);

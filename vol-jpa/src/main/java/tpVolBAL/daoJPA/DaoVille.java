@@ -8,10 +8,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.model.Ville;
-import tpVolBAL.dao.IDaoVille;
+import tpVolBAL.repository.IRepoVille;
 import tpVolBAL.singleton.Application;
 
-public class DaoVille implements IDaoVille {
+public class DaoVille implements IRepoVille {
 
 	@SuppressWarnings("unchecked")
 	@Override

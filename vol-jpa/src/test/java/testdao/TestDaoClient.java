@@ -8,15 +8,15 @@ import sopra.promo404.vol.model.Client;
 import sopra.promo404.vol.model.FormeJuridique;
 import sopra.promo404.vol.model.Particulier;
 import sopra.promo404.vol.model.Societe;
-import tpVolBAL.dao.IdaoClient;
 import tpVolBAL.daoJPA.DaoClient;
+import tpVolBAL.repository.IRepoClient;
 
 
 public class TestDaoClient {
 
 	public static void main(String[] args) {
 		
-		IdaoClient daoClient = new DaoClient();
+		IRepoClient daoClient = new DaoClient();
 		
 		
 		Particulier P1 = new Particulier("Jourdan", "0553784678", "0845231989", "alix-jourdan@hotmail.fr", "Alix", Civilite.MLLE);

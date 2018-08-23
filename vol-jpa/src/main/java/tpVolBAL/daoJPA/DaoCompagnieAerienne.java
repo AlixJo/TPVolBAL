@@ -9,7 +9,7 @@ import javax.persistence.Query;
 
 import sopra.promo404.vol.model.CompagnieAerienne;
 import sopra.promo404.vol.model.Passager;
-import tpVolBAL.dao.IdaoCompagnieAerienne;
+import tpVolBAL.repository.IdaoCompagnieAerienne;
 import tpVolBAL.singleton.Application;
 
 public class DaoCompagnieAerienne implements IdaoCompagnieAerienne{

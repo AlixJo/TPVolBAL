@@ -8,11 +8,11 @@ import sopra.promo404.vol.model.Aeroport;
 import sopra.promo404.vol.model.Escale;
 import sopra.promo404.vol.model.Ville;
 import sopra.promo404.vol.model.Vol;
-import tpVolBAL.dao.IDaoAeroVille;
-import tpVolBAL.dao.IDaoAeroport;
-import tpVolBAL.dao.IDaoEscale;
-import tpVolBAL.dao.IDaoVille;
-import tpVolBAL.dao.IDaoVol;
+import tpVolBAL.repository.IRepoVille;
+import tpVolBAL.repository.IRepoVol;
+import tpVolBAL.repository.IRepoAeroVille;
+import tpVolBAL.repository.IRepoAeroport;
+import tpVolBAL.repository.IRepoEscale;
 import tpVolBAL.singleton.Application;
 
 public class TestDaoVille {
@@ -20,11 +20,11 @@ public class TestDaoVille {
 	public static void main(String[] args) throws ParseException {
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-		IDaoVille daoVille = Application.getInstance().getDaoVille();
-		IDaoAeroport daoAeroport = Application.getInstance().getDaoAeroport();
-		IDaoVol daoVol = Application.getInstance().getDaoVol();
-		IDaoAeroVille daoAeroVille = Application.getInstance().getDaoAeroVille();
-		IDaoEscale daoEscale = Application.getInstance().getDaoEscale();
+		IRepoVille daoVille = Application.getInstance().getDaoVille();
+		IRepoAeroport daoAeroport = Application.getInstance().getDaoAeroport();
+		IRepoVol daoVol = Application.getInstance().getDaoVol();
+		IRepoAeroVille daoAeroVille = Application.getInstance().getDaoAeroVille();
+		IRepoEscale daoEscale = Application.getInstance().getDaoEscale();
 
 		Ville ruminghem = new Ville("Ruminghem", "62370");
 		daoVille.save(ruminghem);

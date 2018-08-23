@@ -8,10 +8,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.model.Vol;
-import tpVolBAL.dao.IDaoVol;
+import tpVolBAL.repository.IRepoVol;
 import tpVolBAL.singleton.Application;
 
-public class DaoVol implements IDaoVol {
+public class DaoVol implements IRepoVol {
 
 	@SuppressWarnings("unchecked")
 	@Override

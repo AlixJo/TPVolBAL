@@ -8,10 +8,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.model.Client;
-import tpVolBAL.dao.IdaoClient;
+import tpVolBAL.repository.IRepoClient;
 import tpVolBAL.singleton.Application;
 
-public class DaoClient implements IdaoClient{
+public class DaoClient implements IRepoClient{
 
 	@Override
 	public List<Client> findAll() {

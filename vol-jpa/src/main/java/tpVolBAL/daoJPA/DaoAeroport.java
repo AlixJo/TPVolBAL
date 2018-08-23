@@ -8,10 +8,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.model.Aeroport;
-import tpVolBAL.dao.IDaoAeroport;
+import tpVolBAL.repository.IRepoAeroport;
 import tpVolBAL.singleton.Application;
 
-public class DaoAeroport implements IDaoAeroport {
+public class DaoAeroport implements IRepoAeroport {
 
 	@SuppressWarnings("unchecked")
 	@Override

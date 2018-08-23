@@ -8,10 +8,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.model.Escale;
-import tpVolBAL.dao.IDaoEscale;
+import tpVolBAL.repository.IRepoEscale;
 import tpVolBAL.singleton.Application;
 
-public class DaoEscale implements IDaoEscale {
+public class DaoEscale implements IRepoEscale {
 
 	@SuppressWarnings("unchecked")
 	@Override

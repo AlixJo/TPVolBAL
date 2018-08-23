@@ -9,10 +9,10 @@ import javax.persistence.Query;
 
 
 import sopra.promo404.vol.model.Reservation;
-import tpVolBAL.dao.IdaoReservation;
+import tpVolBAL.repository.IRepoReservation;
 import tpVolBAL.singleton.Application;
 
-public class DaoReservation implements IdaoReservation{
+public class DaoReservation implements IRepoReservation{
 
 	@Override
 	public List<Reservation> findAll() {

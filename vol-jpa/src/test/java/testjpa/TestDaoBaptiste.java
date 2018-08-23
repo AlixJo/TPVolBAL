@@ -10,18 +10,18 @@ import sopra.promo404.vol.model.Passager;
 import sopra.promo404.vol.model.Reservation;
 import sopra.promo404.vol.model.Societe;
 import sopra.promo404.vol.model.Vol;
-import tpVolBAL.dao.IDaoVol;
-import tpVolBAL.dao.IdaoClient;
-import tpVolBAL.dao.IdaoCompagnieAerienne;
-import tpVolBAL.dao.IdaoCompagnieAerienneVol;
-import tpVolBAL.dao.IdaoPassager;
-import tpVolBAL.dao.IdaoReservation;
 import tpVolBAL.daoJPA.DaoClient;
 import tpVolBAL.daoJPA.DaoCompagnieAerienne;
 import tpVolBAL.daoJPA.DaoCompagnieAerienneVol;
 import tpVolBAL.daoJPA.DaoPassager;
 import tpVolBAL.daoJPA.DaoReservation;
 import tpVolBAL.daoJPA.DaoVol;
+import tpVolBAL.repository.IRepoVol;
+import tpVolBAL.repository.IRepoClient;
+import tpVolBAL.repository.IRepoCompagnieAerienneVol;
+import tpVolBAL.repository.IdaoCompagnieAerienne;
+import tpVolBAL.repository.IRepoPassager;
+import tpVolBAL.repository.IRepoReservation;
 
 public class TestDaoBaptiste {
 
@@ -29,12 +29,12 @@ public class TestDaoBaptiste {
 		
 		SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
 
-		IdaoReservation daoreservation = new DaoReservation();
-		IdaoPassager daopassager = new DaoPassager();
+		IRepoReservation daoreservation = new DaoReservation();
+		IRepoPassager daopassager = new DaoPassager();
 		IdaoCompagnieAerienne daocompagnieaerienne = new DaoCompagnieAerienne();
-		IdaoCompagnieAerienneVol daocompagnieaeriennevol = new DaoCompagnieAerienneVol();
-		IDaoVol daovol = new DaoVol();
-		IdaoClient daoclient = new DaoClient();
+		IRepoCompagnieAerienneVol daocompagnieaeriennevol = new DaoCompagnieAerienneVol();
+		IRepoVol daovol = new DaoVol();
+		IRepoClient daoclient = new DaoClient();
 		
 		Vol v1 = new Vol();
 		daovol.save(v1);

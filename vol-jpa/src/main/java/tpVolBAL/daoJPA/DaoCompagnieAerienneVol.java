@@ -9,10 +9,10 @@ import javax.persistence.Query;
 
 import sopra.promo404.vol.model.CompagnieAerienneVol;
 import sopra.promo404.vol.model.Passager;
-import tpVolBAL.dao.IdaoCompagnieAerienneVol;
+import tpVolBAL.repository.IRepoCompagnieAerienneVol;
 import tpVolBAL.singleton.Application;
 
-public class DaoCompagnieAerienneVol implements IdaoCompagnieAerienneVol {
+public class DaoCompagnieAerienneVol implements IRepoCompagnieAerienneVol {
 
 	@Override
 	public List<CompagnieAerienneVol> findAll() {

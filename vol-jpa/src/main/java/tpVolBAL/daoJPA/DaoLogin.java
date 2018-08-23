@@ -8,10 +8,10 @@ import javax.persistence.EntityTransaction;
 import javax.persistence.Query;
 
 import sopra.promo404.vol.model.Login;
-import tpVolBAL.dao.IdaoLogin;
+import tpVolBAL.repository.IRepoLogin;
 import tpVolBAL.singleton.Application;
 
-public class DaoLogin implements IdaoLogin{
+public class DaoLogin implements IRepoLogin{
 
 	@Override
 	public List<Login> findAll() {
