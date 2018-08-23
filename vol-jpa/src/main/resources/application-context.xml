@@ -11,10 +11,10 @@
 
 	<context:property-placeholder
 		location="classpath:data-source.properties" />
-		
+
 	<context:component-scan
 		base-package="tpVolBAL.repository" />
-		
+
 	<bean id="dataSource"
 		class="org.apache.commons.dbcp2.BasicDataSource">
 		<property name="driverClassName" value="${sql.driver}" />
@@ -23,17 +23,19 @@
 		<property name="password" value="${sql.password}" />
 		<property name="maxTotal" value="${sql.maxTotal}" />
 	</bean>
-	
+
 	<bean id="entityManagerFactory"
 		class="org.springframework.orm.jpa.LocalContainerEntityManagerFactoryBean">
 		<property name="dataSource" ref="dataSource" />
-		<property name="packagesToScan" value="sopra.promo404.vol.model" />
-		
+		<property name="packagesToScan"
+			value="sopra.promo404.vol.model" />
+
 		<property name="jpaVendorAdapter">
-			<bean class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
+			<bean
+				class="org.springframework.orm.jpa.vendor.HibernateJpaVendorAdapter" />
 		</property>
 
-		
+
 		<property name="jpaProperties">
 			<props>
 				<prop key="hibernate.hbm2ddl.auto">update</prop>
@@ -41,8 +43,18 @@
 				<prop key="hibernate.show_sql">true</prop>
 			</props>
 		</property>
-	</bean>	
-		
-		
-		
+	</bean>
+
+	<bean id="transactionManager"
+		class="org.springframework.orm.jpa.JpaTransactionManager">
+		<property name="entityManagerFactory"
+			ref="entityManagerFactory" />
+	</bean>
+
+	<tx:annotation-driven
+		transaction-manager="transactionManager" />
+
+	<bean
+		class="org.springframework.dao.annotation.PersistenceExceptionTranslationPostProcessor" />
+	<jpa:repositories base-package="eshop.dao" />
 </beans>
