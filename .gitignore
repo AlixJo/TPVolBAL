@@ -14,3 +14,11 @@ vol-model/\.settings/
 vol-model/\.project
 
 vol-jpa/\.settings/
+
+vol-web/\.settings/
+
+vol-web/target/
+
+vol-web/\.classpath
+
+vol-web/\.project
