@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Les villes</title>
+<title>Lien villes/aeroports</title>
 <meta charset="UTF-8" />
 <base href="/vol-web/" />
 <meta name="viewport" content="width=devide-width, initial-scale=1" />
@@ -16,7 +16,7 @@
 	<div class="container">
 		<header class="header">
 
-		<h1>Les villes</h1>
+		<h1>Lien villes/aeroports</h1>
 
 		</header>
 
@@ -26,28 +26,21 @@
 				<tr>
 					<th>Identifiant</th>
 					<th>Version</th>
-					<th>Nom</th>
-					<th>Code Postal</th>
-					<th>Pays</th>
-					<th>Aéroport</th>
+					<th>Aeroport(s)</th>
+					<th>Ville(s)</th>
 					<th></th>
 				</tr>
 			</thead>
 
 			<tbody>
 
-				<c:forEach items="${mesVilles}" var="vill">
+				<c:forEach items="${mesAerovilles}" var="aevill">
 					<tr>
-						<td>${vill.id}</td>
-						<td>${vill.version}</td>
-						<td>${vill.nom}</td>
-						<td>${vill.codePostal}</td>
-						<td>${vill.pays}</td>
-						<td>${vill.aeroport.id}</td>
-						<td><a href="ville/edit/${vill.id}"
-							class="btn btn-info btn-sm">Editer</a> 
-							
-							<a href="ville/delete/${vill.id}"
+						<td>${aevill.id}</td>
+						<td>${aevill.version}</td>
+						<td>${aevill.aeroport.code}</td>
+						<td>${aevill.ville.nom}</td>
+						<td><a href="aeroville/delete/${aevill.id}"
 							class="btn btn-danger btn-sm">Supprimer</a>
 							
 						</td>
@@ -57,7 +50,7 @@
 
 			</tbody>
 		</table>
-		<a href="ville/add" class="btn btn-success">Ajouter</a> 
+		<a href="aeroville/add" class="btn btn-success">Ajouter</a> 
 		</section>
 	</div>
 

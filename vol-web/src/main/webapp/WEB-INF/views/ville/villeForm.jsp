@@ -23,7 +23,7 @@
 		</header>
 
 		<section>
-		<form action="ville" method="post">
+		<form action="ville/save" method="post">
 			<input type="hidden" name="action" value="save" /> 
 			<input type="hidden" name="id" id="id" value="${maVille.id}" /> 
 			<input type="hidden" name="version" id="version" value="${maVille.version}" />
@@ -53,6 +53,18 @@
 						value="${maVille.pays}" />
 				</div>
 			</div>
+			
+			<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Aeroport</label>
+					<div class="col-sm-10">
+						<select class="custom-select" name="aeroport.id" required>
+							<option value=""></option>
+							<c:forEach items="${aeroports}" var="aero">
+								<option value="${aero.id}" ${maVille.aeroport.id eq aero.id?'selected':''}>${aero.id}</option>
+							</c:forEach>
+						</select>
+					</div>
+				</div>
 
 			<div class="form-group row">
 				<div class="col-sm-2"></div>

@@ -12,58 +12,50 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import sopra.promo404.vol.model.AeroVille;
 import sopra.promo404.vol.model.Ville;
+import tpVolBAL.repository.IRepoAeroVille;
 import tpVolBAL.repository.IRepoAeroport;
 import tpVolBAL.repository.IRepoVille;
 
-
 @Controller
-@RequestMapping("/ville")
-public class VilleController {
+@RequestMapping("/aeroville")
+public class AerovilleController {
 
 	@Autowired
+	private IRepoAeroVille aerovilleRepo;
+	
+	@Autowired
 	private IRepoVille villeRepo;
+	
 	
 	@Autowired
 	private IRepoAeroport aeroportRepo;
 
 	@GetMapping(value = { "", "/list" })
 	public String list(Model model) {
-		List<Ville> villes = villeRepo.findAll();
+		List<AeroVille> aerovilles = aerovilleRepo.findAll();
 
-		model.addAttribute("mesVilles", villes);
+		model.addAttribute("mesAerovilles", aerovilles);
 
-		return "ville/villes";
+		return "aeroville/aerovilles";
 	}
 
 	@GetMapping("/add")
 	public String add(Model model) {
 
-		model.addAttribute("maVille", new Ville());
+		model.addAttribute("monAeroville", new AeroVille());
 		model.addAttribute("aeroports", aeroportRepo.findAllAeroport());
-
-		return "ville/villeForm";
+		model.addAttribute("villes", villeRepo.findAllVille());
+		return "aeroville/aerovilleForm";
 	}
 
-	@GetMapping("/edit/{id}")
-	public String edit(@PathVariable(value = "id", required = true) Long id, Model model) {
-		Optional<Ville> ville = villeRepo.findById(id);
-
-		if (ville.isPresent()) {
-			model.addAttribute("maVille", ville.get());
-		} else {
-			model.addAttribute("maVille", new Ville());
-		}
-		
-		model.addAttribute("aeroports", aeroportRepo.findAllAeroport());
-		
-		return "ville/villeForm";
-	}
+	
 	
 	@PostMapping("/save")
-	public String save(@ModelAttribute("maVille") Ville ville) {
+	public String save(@ModelAttribute("monAeroville") AeroVille aeroville) {
 		
-		villeRepo.save(ville);
+		aerovilleRepo.save(aeroville);
 
 		return "redirect:list";
 	}
@@ -72,7 +64,7 @@ public class VilleController {
 	@GetMapping("/delete/{id}")
 	public String delete(@PathVariable(value="id", required=true) Long id, Model model) {
 		
-		villeRepo.deleteById(id);
+		aerovilleRepo.deleteById(id);
 
 		return "forward:../list";
 	}
