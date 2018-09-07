@@ -54,6 +54,15 @@
 							value="${monPassager.dtNaissance}" />
 					</div>
 				</div>
+				
+				<div class="form-group row">
+					<label class="col-sm-2 col-form-label">Pièce d'identité</label>
+					<div class="col-sm-10">
+						<input type="text" class="form-control" name="pieceIdentite"
+							placeholder="pieceIdentite" value="${monPassager.pieceIdentite}" />
+					</div>
+				</div>
+				
 
 				<div class="form-group row">
 					<label class="col-sm-2 col-form-label">Rue</label>
@@ -62,7 +71,10 @@
 							placeholder="La rue" value="${monPassager.adresse.rue}" />
 					</div>
 				</div>
+				
+				
 
+				
 				<div class="form-group row">
 					<label class="col-sm-2 col-form-label">Code postal</label>
 					<div class="col-sm-10">
@@ -122,12 +134,13 @@
 						<button type="submit" class="btn btn-primary col-sm-12">Envoyer</button>
 					</div>
 					<div class="col-sm-3">
-						<a href="eleve/list" class="btn btn-warning col-sm-12">Annuler</a>
+						<a href="passager/list" class="btn btn-warning col-sm-12">Annuler</a>
 					</div>
 				</div>
 			</form>
 		</section>
 	</div>
+	
 
 </body>
 </html>

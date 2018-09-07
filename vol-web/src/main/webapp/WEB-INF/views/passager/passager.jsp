@@ -51,7 +51,7 @@
 						<td>${pass.prenom}</td>
 						<td><fmt:formatDate value="${pass.dtNaissance}"
 								pattern="dd/MM/yyyy" />
-						<td>${pass.pieceid}</td>
+						<td>${pass.pieceIdentite}</td>
 						<td>${pass.reservation}</td>
 						<td>${pass.adresse.rue}</td>
 						<td>${pass.adresse.codePostal}</td>
