@@ -1,5 +1,5 @@
 package vol.controller;
 
-public class ParticulierController extends  {
+public class ParticulierController {
 
 }
