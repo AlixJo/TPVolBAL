@@ -29,7 +29,7 @@ public class VilleController {
 
 		model.addAttribute("mesVilles", villes);
 
-		return "ville/ville";
+		return "ville/villes";
 	}
 
 	@GetMapping("/add")
@@ -53,7 +53,7 @@ public class VilleController {
 	}
 	
 	@PostMapping("/save")
-	public String save(@ModelAttribute("monEleve") Ville ville) {
+	public String save(@ModelAttribute("maVille") Ville ville) {
 		
 		villeRepo.save(ville);
 

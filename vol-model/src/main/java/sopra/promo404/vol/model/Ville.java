@@ -25,6 +25,7 @@ public class Ville {
 	private int version;
 	private String nom;
 	private String codePostal;
+	private String pays;
 	@OneToMany(mappedBy="ville")
 	private List<AeroVille> aeroports = new ArrayList<>();
 
@@ -39,6 +40,15 @@ public class Ville {
 		this.codePostal = codePostal;
 	}
 
+
+	public String getPays() {
+		return pays;
+	}
+
+
+	public void setPays(String pays) {
+		this.pays = pays;
+	}
 
 
 	public Long getId() {
