@@ -45,8 +45,8 @@ public class AerovilleController {
 	public String add(Model model) {
 
 		model.addAttribute("monAeroville", new AeroVille());
-		model.addAttribute("aeroports", aeroportRepo.findAllAeroport());
-		model.addAttribute("villes", villeRepo.findAllVille());
+		model.addAttribute("aeroports", aeroportRepo.findAll());
+		model.addAttribute("villes", villeRepo.findAll());
 		return "aeroville/aerovilleForm";
 	}
 

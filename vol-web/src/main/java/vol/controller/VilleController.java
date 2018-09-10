@@ -29,7 +29,7 @@ public class VilleController {
 
 	@GetMapping(value = { "", "/list" })
 	public String list(Model model) {
-		List<Ville> villes = villeRepo.findAll();
+		List<Ville> villes = villeRepo.findAllWithAeroport();
 
 		model.addAttribute("mesVilles", villes);
 

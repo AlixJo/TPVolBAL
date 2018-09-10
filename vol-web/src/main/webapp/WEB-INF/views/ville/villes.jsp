@@ -29,7 +29,6 @@
 					<th>Nom</th>
 					<th>Code Postal</th>
 					<th>Pays</th>
-					<th>Aéroport</th>
 					<th></th>
 				</tr>
 			</thead>
@@ -43,7 +42,7 @@
 						<td>${vill.nom}</td>
 						<td>${vill.codePostal}</td>
 						<td>${vill.pays}</td>
-						<td>${vill.aeroport.id}</td>
+						
 						<td><a href="ville/edit/${vill.id}"
 							class="btn btn-info btn-sm">Editer</a> 
 							

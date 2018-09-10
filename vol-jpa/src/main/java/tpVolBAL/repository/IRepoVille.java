@@ -9,7 +9,7 @@ import sopra.promo404.vol.model.Ville;
 
 public interface IRepoVille extends JpaRepository <Ville , Long>{
 
-	@Query("select v from Ville v")
-	List<Ville> findAllVille();
+	@Query("select distinct v from Ville v left join fetch v.aeroports a")
+	List<Ville> findAllWithAeroport();
 	
 }

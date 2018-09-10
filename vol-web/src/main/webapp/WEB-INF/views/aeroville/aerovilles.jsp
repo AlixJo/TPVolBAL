@@ -4,7 +4,7 @@
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-<title>Lien villes/aeroports</title>
+<title>Villes et aéroports</title>
 <meta charset="UTF-8" />
 <base href="/vol-web/" />
 <meta name="viewport" content="width=devide-width, initial-scale=1" />
@@ -16,7 +16,7 @@
 	<div class="container">
 		<header class="header">
 
-		<h1>Lien villes/aeroports</h1>
+		<h1>Associer une ville à un aéroport</h1>
 
 		</header>
 
@@ -25,7 +25,6 @@
 			<thead>
 				<tr>
 					<th>Identifiant</th>
-					<th>Version</th>
 					<th>Aeroport(s)</th>
 					<th>Ville(s)</th>
 					<th></th>
@@ -37,7 +36,6 @@
 				<c:forEach items="${mesAerovilles}" var="aevill">
 					<tr>
 						<td>${aevill.id}</td>
-						<td>${aevill.version}</td>
 						<td>${aevill.aeroport.code}</td>
 						<td>${aevill.ville.nom}</td>
 						<td><a href="aeroville/delete/${aevill.id}"

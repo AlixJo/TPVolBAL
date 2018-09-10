@@ -37,34 +37,23 @@
 
 
 			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">codePostal</label>
+				<label class="col-sm-2 col-form-label">Code Postal</label>
 				<div class="col-sm-10">
 					<input type="text" step="1" class="form-control" name="codePostal"
 						id="codePostal" placeholder="Le code postal" required
 						value="${maVille.codePostal}" />
 				</div>
 			</div>
+			
 
 			<div class="form-group row">
-				<label class="col-sm-2 col-form-label">pays</label>
+				<label class="col-sm-2 col-form-label">Pays</label>
 				<div class="col-sm-10">
 					<input type="text" step="1" class="form-control" name="pays"
 						id="pays" placeholder="Le pays" required
 						value="${maVille.pays}" />
 				</div>
 			</div>
-			
-			<div class="form-group row">
-					<label class="col-sm-2 col-form-label">Aeroport</label>
-					<div class="col-sm-10">
-						<select class="custom-select" name="aeroport.id" required>
-							<option value=""></option>
-							<c:forEach items="${aeroports}" var="aero">
-								<option value="${aero.id}" ${maVille.aeroport.id eq aero.id?'selected':''}>${aero.id}</option>
-							</c:forEach>
-						</select>
-					</div>
-				</div>
 
 			<div class="form-group row">
 				<div class="col-sm-2"></div>
