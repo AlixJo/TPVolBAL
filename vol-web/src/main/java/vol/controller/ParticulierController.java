@@ -22,9 +22,6 @@ import tpVolBAL.repository.IRepoClient;
 @Controller
 @RequestMapping("/particulier")
 public class ParticulierController {
-=======
-public class ParticulierController   {
->>>>>>> Stashed changes
 
 	@Autowired
 	private IRepoClient clientRepo;
