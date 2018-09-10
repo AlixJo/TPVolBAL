@@ -7,7 +7,7 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Passager</title>
+<title>Reservation</title>
 <base href="/vol-web/" />
 <link rel="stylesheet"
 	href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
@@ -18,7 +18,7 @@
 
 		<header class="header">
 
-		<h1>Edition de passager</h1>
+		<h1>Mes reservations</h1>
 
 		</header>
 
@@ -28,39 +28,35 @@
 				<tr>
 					<th>Identifiant</th>
 					<th>Version</th>
-					<th>Nom</th>
-					<th>Prénom</th>
-					<th>Date de naissance</th>
-					<th>Piece d'identité</th>
-					<td>Reservation</td>
-					<th>Rue</th>
-					<th>Code postal</th>
-					<th>Ville</th>
-					<th>Pays</th>
-
+					<th>Code</th>
+					<th>Date de reservation</th>
+					<th>Confirmation</th>
+					<th>Annulation</th>
+					<th>Passager</th>
+					<th>Vol</th>
+					<th>Client</th>
 					<th></th>
 				</tr>
 			</thead>
 
 			<tbody>
 
-				<c:forEach items="${passagers}" var="pass">
+				<c:forEach items="${reservations}" var="resa">
 					<tr>
-						<td>${pass.id}</td>
-						<td>${pass.version}</td>
-						<td>${pass.nom}</td>
-						<td>${pass.prenom}</td>
-						<td><fmt:formatDate value="${pass.dtNaissance}"
+						<td>${resa.id}</td>
+						<td>${resa.version}</td>
+						<td>${resa.code}</td>
+						<td><fmt:formatDate value="${resa.dtResa}"
 								pattern="dd/MM/yyyy" />
-						<td>${pass.pieceIdentite}</td>
-						<td>${pass.reservation.code}</td>
-						<td>${pass.adresse.rue}</td>
-						<td>${pass.adresse.codePostal}</td>
-						<td>${pass.adresse.ville}</td>
-						<td>${pass.adresse.pays}</td>
-						<td><a href="passager/edit/${pass.id}"
+						<td>${resa.confirmee}</td>
+						<td>${resa.annulee}</td>
+						<td>${resa.passager.nom}</td>
+						<td>${resa.vol.id}</td>
+						<td>${resa.client.nom}</td>
+						<td><a href="reservation/edit/${resa.id}"
 							class="btn btn-info btn-sm">Editer</a> <a
-							href="passager/delete/${pass.id}" class="btn btn-danger btn-sm">Supprimer</a></td>
+							href="reservation/delete/${resa.id}"
+							class="btn btn-danger btn-sm">Supprimer</a></td>
 					</tr>
 
 				</c:forEach>
@@ -71,7 +67,7 @@
 
 			</tbody>
 		</table>
-		<a href="passager/add" class="btn btn-success">Ajouter</a> </section>
+		<a href="reservation/add" class="btn btn-success">Ajouter</a> </section>
 	</div>
 </body>
 </html>

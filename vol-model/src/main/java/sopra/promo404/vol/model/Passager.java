@@ -1,6 +1,5 @@
 package sopra.promo404.vol.model;
 
-import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -13,6 +12,8 @@ import javax.persistence.Id;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 import javax.persistence.Version;
+
+import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table(name= "passager")
 public class Passager {
@@ -25,6 +26,7 @@ public class Passager {
 	private int version;
 	private String nom;
 	private String prenom;
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dtNaissance;
 	private String pieceIdentite;
 	@Embedded

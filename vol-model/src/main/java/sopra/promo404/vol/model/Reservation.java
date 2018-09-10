@@ -14,6 +14,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.persistence.Version;
+
+import org.springframework.format.annotation.DateTimeFormat;
 @Entity
 @Table (name = "reservation")
 public class Reservation {
@@ -25,6 +27,7 @@ public class Reservation {
 	private int version;
 	private String code;
 	@Temporal(TemporalType.DATE)
+	@DateTimeFormat(pattern = "yyyy-MM-dd")
 	private Date dtResa;
 	private Boolean confirmee;
 	private Boolean annulee;
